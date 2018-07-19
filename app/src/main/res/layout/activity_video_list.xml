@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_video_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@android:color/black">
+
+            <com.hochan.dragtofloatvideoview.video.videolayout.VideoPlayLayout
+                android:id="@+id/top_video_layout"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:minHeight="74dp"
+                android:transitionName="video"
+                app:layout_scrollFlags="scroll|enterAlwaysCollapsed|exitUntilCollapsed"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="更多视频"
+                android:textColor="@android:color/white"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+        </LinearLayout>
+
+        <com.hochan.dragtofloatvideoview.video.videolayout.FullVideoPlayLayout
+            android:id="@+id/full_video_play"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left|top"
+            android:alpha="1"/>
+
+        <FrameLayout
+            android:id="@+id/fl_title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="24dp">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="left"
+                android:text="返回"/>
+
+            <Button
+                android:id="@+id/btn_enter_mini_window"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="right"
+                android:text="小窗"/>
+        </FrameLayout>
+    </FrameLayout>
+
+</layout>
